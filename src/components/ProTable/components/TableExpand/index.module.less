@@ -1,0 +1,45 @@
+.table-form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  :global(.arco-form-label-item-left) {
+    > label {
+      white-space: nowrap;
+    }
+  }
+
+  .search-left {
+    width: 90%;
+  }
+
+  .search-right {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-left: 1px solid #ebebeb;
+    height: fit-content;
+    box-sizing: border-box;
+    margin-left: 20px;
+
+    button {
+      margin-bottom: 20px;
+    }
+
+    button:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.option {
+  display: flex;
+  padding-bottom: 20px;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.option_border {
+  border-top: 1px solid #ebebeb;
+}
