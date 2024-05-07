@@ -16,14 +16,15 @@ import React, { useRef } from "react"
 function Table() {
   const ref = useRef<{ reload: () => void }>()
   return (
-    <Card>
+    <Card title="搜索参数查看控制台">
       <ProTable
         ref={ref}
         request={query}
         columns={
           [
+            { title: "关键词", dataIndex: "keyword", hide: true, search: true },
             { title: "ID", dataIndex: "id", sorter: true },
-            { title: "名字", dataIndex: "name", search: true },
+            { title: "名字", dataIndex: "name" },
             {
               title: "年龄",
               dataIndex: "age",

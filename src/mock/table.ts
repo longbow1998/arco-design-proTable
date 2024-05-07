@@ -32,7 +32,7 @@ const getTableList = () => {
 setupMock({
   setup: () => {
     Mock.mock(new RegExp("/api/table/query"), params => {
-      console.log(params)
+      console.log(JSON.parse(params.body))
       return getTableList()
     })
 
