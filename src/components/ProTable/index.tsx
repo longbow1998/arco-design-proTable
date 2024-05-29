@@ -75,6 +75,10 @@ const ProTable = forwardRef<
         setIsGetListSaveParams(true)
         setParams(values)
       }
+      // 如果是立即搜索如果没有参数则中断方法不进行请求，防止二次请求
+      if (props.immediateSearch && !Object.keys(values).length) {
+        return
+      }
       // 是否显示loading
       if (isLoading) setLoading(true)
       // 如果是搜索，重置分页
