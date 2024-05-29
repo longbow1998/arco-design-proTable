@@ -12,6 +12,7 @@ import {
   IconUnlock
 } from "@arco-design/web-react/icon"
 import React, { useRef } from "react"
+import { exportFile } from "js-xxx"
 
 function Table() {
   const ref = useRef<{ reload: () => void }>()
@@ -138,6 +139,18 @@ function Table() {
             key="refresh"
             onClick={() => ref.current.reload()}>
             刷新
+          </Button>,
+          <Button
+            type="primary"
+            key="export"
+            onClick={() => {
+              exportFile(
+                document.getElementsByTagName("table")[0].outerHTML,
+                "tableExcel",
+                "xls"
+              )
+            }}>
+            导出
           </Button>
         ]}
         toolBarRender={[
